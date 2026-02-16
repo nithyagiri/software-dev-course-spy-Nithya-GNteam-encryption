@@ -1,7 +1,5 @@
 # software-dev-course-spy-team-encryption
 
-# asymmetric-encryption-super-secret-spy-program
-
 ## GETTING STARTED
 
 1. Each member of your group should generate a public/private key pair using the `ssh-keygen` command in the terminal:
