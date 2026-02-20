@@ -87,3 +87,13 @@ If you have an existing key pair, you can delete them and generate a new key pai
 `-----BEGIN OPENSSH PRIVATE KEY-----`  
 `{KEY}`  
 `-----END OPENSSH PRIVATE KEY-----`
+
+
+We use ssh-keygen -t rsa -b 2048 -f mykey to generate keys which are stored in two files, The keys generated are in OpenSSH format, and Java’s crypto API does NOT understand that format natively, so when I run the program I get the error message while encrypting Error encrypting message: Illegal base64 character 2d, the actual format that Java to understand would be, in addition to ssh-keygen -t rsa -b 2048 -f mykey, run the following commands
+
+
+Convert Private Key to PKCS#8 and Convert Public Key to X.509 (PKCS8 format)
+
+ssh-keygen -p -m PKCS8 -f mykey 
+
+ssh-keygen -f mykey.pub -e -m PKCS8 > mykey_public.pem
